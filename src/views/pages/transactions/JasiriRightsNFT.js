@@ -9,13 +9,16 @@ import TableRow from '@mui/material/TableRow';
 import CustomText from "views/components/CustomText";
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link, useLocation } from "react-router-dom";
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import FirstPageIcon from '@mui/icons-material/FirstPage';
+import LastPageIcon from '@mui/icons-material/LastPage';
 
 function createData( NAME, TYPE, ONSALE, ORIGINATOR_ADDRESS, OWNER_ADDRESS) {
   return { NAME, TYPE, ONSALE, ORIGINATOR_ADDRESS, OWNER_ADDRESS};
 }
 
-export default function JasiriRightsNFTTable() {
+export default function JasiriRightsNFT() {
   const rows = [
     createData('ALGO', 'DATRTRATSR..USIU', 'TRUE', "DATRTRATSR..USIU", 'USUDUI.....JIAJI'),
     createData('ALGO', 'DATRTRATSR..USIU', 'TRUE', "DATRTRATSR..USIU", 'USUDUI.....JIAJI'),
@@ -32,7 +35,6 @@ export default function JasiriRightsNFTTable() {
 
   return (
     <div className="mt-4">
-      <CustomText size="xs" className="pl-8 py-4" align="left">Recent Transactions</CustomText>
       <TableContainer className="main-component rounded-sm">
         <Grid container alignItems={'center'} className="p-2">
           <Grid item lg={3}>
@@ -46,10 +48,22 @@ export default function JasiriRightsNFTTable() {
               <InputBase className="w-full flex-1 text-title" placeholder="Search for transactions and ID"/>
             </div> 
           </Grid>
-          <Grid item lg={3} className="flex justify-center">
-            <Link to="rights_nft" >
-              <CustomText size="[10px]" className="rounded bg-[#3BA18E] py-2 px-10">View Full Transaction</CustomText>
-            </Link>
+          <Grid item lg={3} className="flex justify-end items-center">
+              <div className="text-white text-[10px] mr-3">1 ...... 2562</div>
+              <div className='flex'>
+                <div className='rounded-[3px] border border-table_border text-footer_text m-1 px-0.5'>
+                  <NavigateBeforeIcon/>
+                </div>
+                <div className='rounded-[3px] border border-table_border text-footer_text m-1 px-0.5'>
+                  <NavigateNextIcon/>
+                </div>
+                <div className='rounded-[3px] border border-table_border text-footer_text m-1 px-0.5'>
+                  <FirstPageIcon/>
+                </div>
+                <div className='rounded-[3px] border border-table_border text-footer_text m-1 px-0.5'>
+                  <LastPageIcon/>
+                </div>
+              </div>
           </Grid>
         </Grid>
         <Table aria-label="token analytics table">

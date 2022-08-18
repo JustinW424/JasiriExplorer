@@ -21,7 +21,7 @@ export default function Footer({ ...props }) {
   }, []);
   const handleActive = (value = {}) => setActive(value);
   return (
-    <div className="bg-[#18181A] pt-12 pb-24 mt-9">
+    <div className="bg-[#18181A] pt-12 pb-24 mt-9" id="about_jasiri">
       <Container sx={{ maxWidth: 1200 }}>
         <Grid container alignItems="flex-start" justifyContent="center">
           <Grid item lg={4.8}>
@@ -63,7 +63,7 @@ export default function Footer({ ...props }) {
         </Grid>
         <div className="mt-12">
           <CustomText color="white" size="xs" className="leading-8">JASIRI Protocol is a product of Safariblocks Ltd.</CustomText>
-          <CustomText color="white" size="xs" className="leading-8">Safariblocks Ltd. | All Rights Reserved Worldwide</CustomText>
+          <CustomText color="white" size="xs" className="leading-8 flex justify-center items-center"><span className="text-primary text-xl">©</span>Safariblocks Ltd. | All Rights Reserved Worldwide</CustomText>
         </div>
       </Container>
     </div>
