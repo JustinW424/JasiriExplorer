@@ -23,7 +23,7 @@ export default function AnalyticTable() {
   ];
 
   return (
-    <TableContainer className="main-component rounded-sm mt-5">
+    <TableContainer className="main-component rounded-sm">
       <Table aria-label="token analytics table" >
         <TableBody>
           {rows.map((row) => (
@@ -31,10 +31,10 @@ export default function AnalyticTable() {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row" className="text-title border-table_border">
+              <TableCell component="th" scope="row" className="pl-8 text-title border-table_border">
                 {row.name}
               </TableCell>
-              <TableCell align="right" className="text-title border-table_border">{row.value}{row.unit}</TableCell>
+              <TableCell align="right" className="pr-8 text-title border-table_border">{row.value}{row.unit}</TableCell>
             </TableRow>
           ))}
         </TableBody>

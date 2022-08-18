@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import CustomText from "views/components/CustomText";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Button from '@mui/material/Button';
 
 export default function AssetsChart() {
   const chartContainer = useRef(null);
@@ -72,25 +73,25 @@ export default function AssetsChart() {
 
   return (
     <div
-      className={`  h-full w-full rounded-xl border border-blue_gray border-opacity-20 bg-white bg-opacity-5 bg-center bg-no-repeat bg-cover pb-2`}
+      className={`h-full w-full main-component rounded-sm pt-4`}
     >
       <div>
           <CustomText color="title" size="xs" bold="bold">
             Volume of Tokenized Assets
           </CustomText>
-          <CustomText size="sm" bold="bold">
+          <CustomText size="sm" bold="bold" color="textsecondary">
             (${price})
           </CustomText>
       </div>
       <div>
         <LineChart
           width={500}
-          height={300}
+          height={250}
           data={data}
           margin={{
             top: 5,
-            right: 30,
-            left: 20,
+            right: 0,
+            left: 0,
             bottom: 5,
           }}
         >
@@ -103,8 +104,12 @@ export default function AssetsChart() {
             animationDuration={0}/>
         </LineChart>
       </div>
-      <div>
-        
+      <div className="flex justify-end px-4">
+        <Button variant="contained" className="mx-2 rounded-sm text-[8px] text-title bg-textsecondary w-5 h-5 p-0" sx={{minWidth:20}}>1D</Button>
+        <Button variant="contained" className="mx-2 rounded-sm text-[8px] text-title bg-textsecondary w-5 h-5 p-0" sx={{minWidth:20}}>1W</Button>
+        <Button variant="contained" className="mx-2 rounded-sm text-[8px] text-title bg-textsecondary w-5 h-5 p-0" sx={{minWidth:20}}>1M</Button>
+        <Button variant="contained" className="mx-2 rounded-sm text-[8px] text-title bg-textsecondary w-5 h-5 p-0" sx={{minWidth:20}}>6M</Button>
+        <Button variant="contained" className="mx-2 rounded-sm text-[8px] text-title bg-textsecondary w-5 h-5 p-0" sx={{minWidth:20}}>1Y</Button>
       </div>
     </div>
   );

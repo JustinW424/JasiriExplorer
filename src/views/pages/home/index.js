@@ -1,30 +1,32 @@
 import React from "react";
-// import HomeComponent from "./HomeComponent";
-import SearchBox from "./SearchBox";
-import PriceCardAll from "./PriceCardAll"
+import AnalyticCards from "./AnalyticCards"
 import AnalyticTable from "./AnalyticTable";
 import VerifiedAssetsTable from "./VerifiedAssetsTable";
 import AssetsChart from "./AssetsChart";
 import { Grid } from "@mui/material";
 import TokenizedAssetsTable from "./TokenizedAssetsTable";
 import JasiriRightsNFTTable from "./JasiriRightsNFTTable";
+import ScrollSpy from "react-ui-scrollspy";
 
 export default function Home() {
-  return ( 
-    <div className="h-full">
-      <SearchBox/>
-      <PriceCardAll/>
-      <AnalyticTable/>
-      <Grid container className="pt-5">
-        <Grid item lg={6} className="p-2">
-          <VerifiedAssetsTable/>
-        </Grid>
-        <Grid item lg={6} className="p-2">
-          <AssetsChart/>
-        </Grid>
-      </Grid>
-      <TokenizedAssetsTable/>
-      <JasiriRightsNFTTable/>
-    </div>
+  return (
+      <ScrollSpy onUpdateCallback={(id)=>console.log(id)} scrollThrottle="50">
+        <div id="home">
+          <AnalyticCards />
+          <AnalyticTable />
+          <Grid container className="pt-5">
+            <Grid item lg={6} className="pr-2">
+              <VerifiedAssetsTable />
+            </Grid>
+            <Grid item lg={6} className="pl-2">
+              <AssetsChart />
+            </Grid>
+          </Grid>
+        </div>
+        <div id="transactions">
+          <TokenizedAssetsTable />
+          <JasiriRightsNFTTable />
+        </div>
+      </ScrollSpy>
   );
 }

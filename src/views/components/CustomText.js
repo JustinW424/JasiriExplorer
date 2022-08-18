@@ -16,11 +16,9 @@ export default function CustomText({
   return (
     <div
       className={[
-        className,
         `text-${align} text-${size}`,
         `text-${color}`,
-        `font-${bold}`,
-        ,
+        `font-${bold}`, className,
         opacity ? `text-opacity-${opacity}` : "",
         // outlined ? "text-outline" : "",
         transparent ? "opacity-70" : "",
